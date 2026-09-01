@@ -1,0 +1,4 @@
+I- El programa compila: "unaVar = 50" porque la clase derivada tiene el constructor para asignale un valor y despues llama a un metodo que imprime ("unaVar = ")
+para despues imprimir el valor que tenga el objeto (es decir 50)
+
+II- Despues de la ejecucion el programa devuelve 0 despues de haber impreso ese mensaje
