@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+class Punto {
+    int x;
+    int y;
+    public:
+    void cero();
+    void ingresar_imprimir();
+};
+void Punto::cero()
+{
+        x = 0;
+        y = 0;
+}
+void Punto::ingresar_imprimir()
+{
+   cout << "Ingrese el valor de X: "; 
+   cin >> x;
+   cout << "Ingrese el valor de Y: "; 
+   cin >> y;
+   cout << endl;
+   cout << "El valor de X es de: " << x << endl << "El valor de Y es de: " << y;
+}
+
+
+int main()
+{
+    Punto hola;
+    hola.cero();
+    hola.ingresar_imprimir();
+    return 0;
+}
