@@ -1,0 +1,59 @@
+#include<iostream>
+using namespace std;
+class Persona {
+    protected:
+    char nombre[40];
+    int edad;
+    public:
+    void ingresar();
+    void imprimir();
+};
+
+void Persona::ingresar()
+{
+   cout << "Ingrese el nombre de la persona: "; 
+   cin.getline(nombre,40);
+   cin.getline(nombre,40);
+   cout << "Ingrese la edad de la persona: "; 
+   cin >> edad;
+   cout << endl;
+}
+
+void Persona::imprimir()
+{
+    cout << "El nombre de la persona es " << nombre << endl;
+    cout << "La persona tiene " << edad << " años" << endl;
+}
+
+class Empleado:public Persona{
+    private:
+    int sueldo;
+    public:
+    void ingresarE();
+    void cargarE();
+};
+void Empleado::ingresarE()
+{
+   cout << "Ingrese el sueldo: "; 
+   cin >> sueldo;
+   cout << endl;
+}
+void Empleado::cargarE()
+{
+    cout << "El sueldo de la persona es de: " << sueldo << " dolares";
+}
+
+
+int main()
+{
+    Persona persona1;
+    persona1.ingresar();
+    persona1.imprimir();
+    
+    Empleado empleado1;
+    empleado1.ingresar();
+    empleado1.ingresarE();
+    empleado1.imprimir();
+    empleado1.cargarE();
+    return 0;
+}
