@@ -1,0 +1,87 @@
+#include<iostream>
+using namespace std;
+class Edades {
+    int vec[5];
+    int desde;
+    int hasta;
+    public:
+        Edades();
+        Edades(int valor);
+        void ingresar();
+        void imprimir();
+        void imprimir(int hasta);
+        void imprimir(int desde, int hasta);
+};
+Edades::Edades()
+{
+    for(int f=0; f<5; f++)
+    {
+        vec[f]=0;
+    }
+}
+Edades::Edades(int valor)
+{
+    for(int f=0;f<5;f++)
+    {
+        vec[f]=valor;
+    }
+}
+void Edades::ingresar()
+{
+    for(int f=0;f<5;f++)
+    {
+        cout << "Ingrese la edad: ";
+        cin >> vec[f];
+        if(vec[f] >= 18)
+        {
+            cout << "Es mayor de edad" << endl;
+        }
+        else{
+            cout << "No es mayor de edad" << endl;
+        }
+        cout << endl;
+    }
+}
+void Edades::imprimir()
+{
+    cout << "Vector completo: ";
+    for(int f=0;f<5;f++)
+    {
+        cout <<vec[f];
+        cout <<" ";
+    }
+    cout<< endl << endl;
+}
+
+void Edades::imprimir(int hasta){
+    cout << "Ingrese el indice hasta el que se quiera imprimir (del 1 al 5): ";
+    cin >> hasta;
+    for(int i = 0; i < hasta; i++)
+    {
+        cout << vec[i] << " ";
+    }
+    cout << endl << endl;
+}
+
+void Edades::imprimir(int desde, int hasta){
+    cout << "Ingrese el indice desde el que se quiera imprimir (del 1 al 5): ";
+    cin >> desde;
+    cout << "Ingrese el indice hasta el que se quiera imprimir (del 1 al 5): ";
+    cin >> hasta;
+    for(int j = desde - 1; j <= hasta - 1; j++)
+    {
+        cout << vec[j] << " ";
+    }
+}
+
+int main()
+{
+    Edades edades;
+    int desde = 0;
+    int hasta = 0;
+    edades.ingresar();
+    edades.imprimir();
+    edades.imprimir(hasta);
+    edades.imprimir(desde, hasta);
+    return 0;
+}
