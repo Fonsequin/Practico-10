@@ -1,0 +1,71 @@
+#include <iostream>
+using namespace std;
+
+class Socio 
+{
+    private:
+        char nombre[40];
+        int antiguedad;
+    public:
+        Socio() 
+        {
+            cargar();
+        }
+
+        void cargar() 
+        {
+            cout << "Ingrese el nombre del socio: ";
+            cin.getline(nombre, 40);
+            cout << "Ingrese la antiguedad del socio (en años): ";
+            cin >> antiguedad;
+            cin.ignore()
+            cout << endl;
+        }
+
+        int getAntiguedad() 
+        {
+            return antiguedad;
+        }
+
+        void imprimirNombre() 
+        {
+            cout << "El socio con mayor antiguedad es: " << nombre << endl;
+        }
+};
+
+class Club 
+{
+    private:
+        Socio persona1;
+        Socio persona2;
+        Socio persona3;
+
+    public:
+        void imprimirMasAntiguo() 
+        {
+            int auxiliar1 = persona1.getAntiguedad();
+            int auxiliar2 = persona2.getAntiguedad();
+            int auxiliar3 = persona3.getAntiguedad();
+
+            if (auxiliar1 >= auxiliar2 && auxiliar1 >= auxiliar3) 
+            {
+                persona1.imprimirNombre();
+            }
+            else if (auxiliar2 >= auxiliar1 && auxiliar2 >= auxiliar3) 
+            {
+                persona2.imprimirNombre();
+            }
+            else 
+            {
+                persona3.imprimirNombre();
+            }
+        }
+};
+
+int main()
+{
+    Club clubn1; 
+    cout << endl;
+    clubn1.imprimirMasAntiguo();
+    return 0;
+}
